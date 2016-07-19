@@ -24,35 +24,40 @@ describe('SBMap', function() {
 
     describe('set', function() {
 
-    	it('should add a key value pair', function() {
-    		var key = 1, value = 'testvalue';
+        it('should add a key value pair', function() {
+            var key = 1,
+                value = 'testvalue';
 
-    		map.set(key, value);
-    		expect(map.get(key)).toEqual(value);
-    	})
+            map.set(key, value);
+            expect(map.get(key)).toEqual(value);
+        })
 
-    	it('should not increment size if key is already present', function() {
-    		var key = 1, value = 'testvalue';
+        it('should not increment size if key is already present', function() {
+            var key = 1,
+                value = 'testvalue';
 
-    		map.set(key, value);
-    		map.set(key, value);
-    		expect(map.size()).toEqual(1);
-    	});
+            map.set(key, value);
+            map.set(key, value);
+            expect(map.size()).toEqual(1);
+        });
 
-    	it('should set the value associated with a key to a new value if the key is already present', function() {
-    		var key = 1, value ='testvalue', newValue = 'newvalue';
+        it('should set the value associated with a key to a new value if the key is already present', function() {
+            var key = 1,
+                value = 'testvalue',
+                newValue = 'newvalue';
 
-    		map.set(key, value);
-    		map.set(key, newValue);
-    		expect(map.get(key)).toEqual(newValue);
-    	})
+            map.set(key, value);
+            map.set(key, newValue);
+            expect(map.get(key)).toEqual(newValue);
+        })
 
-    	it('should return the value associated with the key if the value is already set', function() {
-    		var key = 1, value = 'testvalue';
+        it('should return the value associated with the key if the value is already set', function() {
+            var key = 1,
+                value = 'testvalue';
 
-    		map.set(key, value);
-    		expect(map.set(key, value)).toEqual(value);
-    	})
+            map.set(key, value);
+            expect(map.set(key, value)).toEqual(value);
+        })
 
     });
 });
