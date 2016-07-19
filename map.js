@@ -61,7 +61,6 @@
 
 	/**
 	 * Return the entry values
-	 * @return {[type]} [description]
 	 */
 	Map.prototype.values = function() {
 		var values = [],
@@ -76,7 +75,6 @@
 
 	/**
 	 * Clear/ empty the map
-	 * @return {[type]} [description]
 	 */
 	Map.prototype.clear = function() {
 		this._set = {};
