@@ -1,7 +1,8 @@
 module.exports = function(grunt) {
     'use strict';
 
-    grunt.loadNpmTasks('grunt-contrib-jshint'); // load the task
+    grunt.loadNpmTasks('grunt-contrib-jshint'); // load the jshint takes
+    grunt.loadNpmTasks('grunt-contrib-jasmine'); // load jasmine tasks
 
     grunt.initConfig({
         jshint: {
@@ -12,8 +13,17 @@ module.exports = function(grunt) {
                 browser: true
             },
             all: ['Gruntfile.js', 'map.js']
+        },
+        jasmine: {
+            map: {
+                src: 'map.js',
+                options: {
+                    specs: 'test/*Spec.js',
+                }
+            }
         }
+
     });
 
-    grunt.registerTask('default', 'jshint');
+    grunt.registerTask('default', ['jshint', 'jasmine']);
 };
