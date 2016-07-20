@@ -1,3 +1,7 @@
+/**
+ * Basic Map implementation for JavaScript
+ * @author  Simon Berry-Byrne <simonbbyrne@gmail.com>
+ */
 (function(window) {
 	'use strict';
 
@@ -66,7 +70,7 @@
 		var values = [],
 			k;
 		for (k in this._set) {
-			if (values.indexOf(this._set[k] === -1 && this.has(k))) {
+			if (values.indexOf(this._set[k]) === -1 && this.has(k)) {
 				values.push(this._set[k]);
 			}
 		}

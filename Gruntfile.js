@@ -2,7 +2,7 @@ module.exports = function(grunt) {
     'use strict';
 
     grunt.loadNpmTasks('grunt-contrib-jshint'); // load the jshint takes
-    grunt.loadNpmTasks('grunt-contrib-jasmine'); // load jasmine tasks
+    grunt.loadNpmTasks('grunt-karma');
 
     grunt.initConfig({
         jshint: {
@@ -12,18 +12,17 @@ module.exports = function(grunt) {
                 eqnull: true,
                 browser: true
             },
-            all: ['Gruntfile.js', 'map.js']
+            all: ['Gruntfile.js', 'karma.conf.js', 'src/*.js']
         },
-        jasmine: {
-            map: {
-                src: 'map.js',
-                options: {
-                    specs: 'test/*Spec.js',
-                }
+        karma: {
+            unit: {
+                configFile: 'karma.conf.js',
             }
         }
-
     });
 
-    grunt.registerTask('default', ['jshint', 'jasmine']);
+    grunt.registerTask('lint', ['jshint']);
+    grunt.registerTask('unit', ['karma']);
+    grunt.registerTask('test', ['lint', 'karma']);
+
 };
