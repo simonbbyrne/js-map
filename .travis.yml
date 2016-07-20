@@ -1,5 +1,5 @@
 language: node_js
-node_js: "0.8"
+node_js: "6.2.2"
 before_install: npm install grunt-cli -g
 install: npm install
 sudo: required
